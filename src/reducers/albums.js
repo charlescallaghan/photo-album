@@ -1,3 +1,11 @@
+import { ADD_ALBUM } from '../actions/AddAlbum'
+
 export default (state = [], action = {}) => {
-    return state
+    switch (action.type) {
+        case ADD_ALBUM:
+            const albuminfo = action.payload
+            return [...state, albuminfo]
+        default:
+            return state
+    }
 }
